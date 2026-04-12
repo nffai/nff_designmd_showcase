@@ -1,0 +1,970 @@
+@import "tailwindcss";
+@import "./global-themes.css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+}
+
+/* ===== Apple Japan ===== */
+[data-theme="apple"] {
+  --ds-font-family: "SF Pro JP", "SF Pro Display", "SF Pro Text", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ds-text-primary: #1d1d1f;
+  --ds-text-secondary: rgba(0,0,0,0.56);
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f5f5f7;
+  --ds-primary: #0071e3;
+  --ds-primary-text: #ffffff;
+  --ds-link: #0066cc;
+  --ds-border: rgba(0,0,0,0.1);
+  --ds-nav-bg: rgba(0,0,0,0.8);
+  --ds-nav-text: rgba(255,255,255,0.92);
+  --ds-body-size: 17px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.47;
+  --ds-body-ls: -0.357px;
+  --ds-heading-size: 40px;
+  --ds-heading-weight: 600;
+  --ds-heading-lh: 1.10;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 980px;
+  --ds-btn-size: 17px;
+  --ds-btn-weight: 400;
+  --ds-btn-padding: 8px 22px;
+  --ds-card-radius: 18px;
+  --ds-card-shadow: rgba(0,0,0,0.22) 3px 5px 30px 0px;
+  --ds-input-radius: 12px;
+  --ds-input-border: rgba(0,0,0,0.2);
+  --ds-backdrop-filter: saturate(180%) blur(20px);
+  --ds-font-feature: normal;
+}
+
+/* ===== SmartHR ===== */
+[data-theme="smarthr"] {
+  --ds-font-family: system-ui, "Yu Gothic", YuGothic, "Hiragino Sans", sans-serif;
+  --ds-text-primary: #23221e;
+  --ds-text-secondary: #706d65;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f8f7f6;
+  --ds-primary: #0077c7;
+  --ds-primary-text: #ffffff;
+  --ds-link: #0071c1;
+  --ds-border: #d6d3d0;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #23221e;
+  --ds-body-size: 16px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: 0;
+  --ds-heading-size: 32px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.25;
+  --ds-heading-ls: 0;
+  --ds-btn-radius: 6px;
+  --ds-btn-size: 16px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 8px 16px;
+  --ds-card-radius: 8px;
+  --ds-card-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  --ds-input-radius: 6px;
+  --ds-input-border: #d6d3d0;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== freee ===== */
+[data-theme="freee"] {
+  --ds-font-family: "Noto Sans JP", sans-serif;
+  --ds-text-primary: #323232;
+  --ds-text-secondary: #595959;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f7f5f5;
+  --ds-primary: #2864f0;
+  --ds-primary-text: #ffffff;
+  --ds-link: #2864f0;
+  --ds-border: #e9e7e7;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #323232;
+  --ds-body-size: 16px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: normal;
+  --ds-heading-size: 34px;
+  --ds-heading-weight: 500;
+  --ds-heading-lh: 1.5;
+  --ds-heading-ls: 0.04em;
+  --ds-btn-radius: 8px;
+  --ds-btn-size: 16px;
+  --ds-btn-weight: 500;
+  --ds-btn-padding: 10px 24px;
+  --ds-card-radius: 12px;
+  --ds-card-shadow: 0 0 1rem rgba(0,0,0,0.1), 0 0.125rem 0.25rem rgba(0,0,0,0.2);
+  --ds-input-radius: 4px;
+  --ds-input-border: #cccccc;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== note ===== */
+[data-theme="note"] {
+  --ds-font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Arial, "Noto Sans JP", Meiryo, sans-serif;
+  --ds-text-primary: #08131a;
+  --ds-text-secondary: rgba(8,19,26,0.66);
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f5f8fa;
+  --ds-primary: #08131a;
+  --ds-primary-text: #ffffff;
+  --ds-link: #08131a;
+  --ds-border: rgba(8,19,26,0.14);
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #08131a;
+  --ds-body-size: 18px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 2.0;
+  --ds-body-ls: normal;
+  --ds-heading-size: 32px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.5;
+  --ds-heading-ls: 0.04em;
+  --ds-btn-radius: 8px;
+  --ds-btn-size: 16px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 10px 20px;
+  --ds-card-radius: 12px;
+  --ds-card-shadow: 0px 1px 3px 1px rgba(0,0,0,0.14), 0px 1px 2px 0px rgba(0,0,0,0.22);
+  --ds-input-radius: 8px;
+  --ds-input-border: rgba(8,19,26,0.14);
+  --ds-backdrop-filter: none;
+  --ds-font-feature: "palt";
+}
+
+/* ===== WIRED.jp ===== */
+[data-theme="wired"] {
+  --ds-font-family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+  --ds-text-primary: #000000;
+  --ds-text-secondary: #757575;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f5f5f5;
+  --ds-primary: #000000;
+  --ds-primary-text: #ffffff;
+  --ds-link: #000000;
+  --ds-border: #e5e5e5;
+  --ds-nav-bg: #000000;
+  --ds-nav-text: #ffffff;
+  --ds-body-size: 16px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.75;
+  --ds-body-ls: normal;
+  --ds-heading-size: 32px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.625;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 0px;
+  --ds-btn-size: 12px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 10px 20px;
+  --ds-card-radius: 0px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 0px;
+  --ds-input-border: #e5e5e5;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: "palt";
+}
+
+/* ===== ABEMA ===== */
+[data-theme="abema"] {
+  --ds-font-family: CopyRight, Emoji, "Hiragino Sans", "BIZ UDGothic", Meiryo, sans-serif;
+  --ds-text-primary: #ffffff;
+  --ds-text-secondary: rgba(255,255,255,0.7);
+  --ds-bg: #000000;
+  --ds-bg-secondary: #1a1a1a;
+  --ds-primary: #00b900;
+  --ds-primary-text: #ffffff;
+  --ds-link: #00b900;
+  --ds-border: rgba(255,255,255,0.12);
+  --ds-nav-bg: #212121;
+  --ds-nav-text: #ffffff;
+  --ds-body-size: 14px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: normal;
+  --ds-heading-size: 24px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.5;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 14px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 8px 24px;
+  --ds-card-radius: 4px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 4px;
+  --ds-input-border: rgba(255,255,255,0.2);
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== connpass ===== */
+[data-theme="connpass"] {
+  --ds-font-family: "Lucida Grande", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "MS Pゴシック", sans-serif;
+  --ds-text-primary: #444444;
+  --ds-text-secondary: #888888;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f5f5f5;
+  --ds-primary: #f18d05;
+  --ds-primary-text: #ffffff;
+  --ds-link: #0066cc;
+  --ds-border: #dddddd;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #444444;
+  --ds-body-size: 12px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: normal;
+  --ds-heading-size: 24px;
+  --ds-heading-weight: 400;
+  --ds-heading-lh: 1.0;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 14px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 8px 24px;
+  --ds-card-radius: 4px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 4px;
+  --ds-input-border: #dddddd;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Cookpad ===== */
+[data-theme="cookpad"] {
+  --ds-font-family: noto-sans, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, arial, sans-serif;
+  --ds-text-primary: #0f0f0f;
+  --ds-text-secondary: #757575;
+  --ds-bg: #f8f6f2;
+  --ds-bg-secondary: #ffffff;
+  --ds-primary: #f28c06;
+  --ds-primary-text: #ffffff;
+  --ds-link: #f28c06;
+  --ds-border: #e0e0e0;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #0f0f0f;
+  --ds-body-size: 16px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: -0.4px;
+  --ds-heading-size: 18px;
+  --ds-heading-weight: 600;
+  --ds-heading-lh: 1.556;
+  --ds-heading-ls: -0.4px;
+  --ds-btn-radius: 8px;
+  --ds-btn-size: 14px;
+  --ds-btn-weight: 600;
+  --ds-btn-padding: 8px 24px;
+  --ds-card-radius: 12px;
+  --ds-card-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --ds-input-radius: 8px;
+  --ds-input-border: #e0e0e0;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: "liga";
+}
+
+/* ===== Cybozu ===== */
+[data-theme="cybozu"] {
+  --ds-font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Meiryo, メイリオ, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  --ds-text-primary: #333333;
+  --ds-text-secondary: #666666;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f5f5f5;
+  --ds-primary: #333333;
+  --ds-primary-text: #ffffff;
+  --ds-link: #333333;
+  --ds-border: #dddddd;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #333333;
+  --ds-body-size: 16px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 2.0;
+  --ds-body-ls: normal;
+  --ds-heading-size: 16px;
+  --ds-heading-weight: 400;
+  --ds-heading-lh: 2.0;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 16px;
+  --ds-btn-weight: 400;
+  --ds-btn-padding: 8px 16px;
+  --ds-card-radius: 0px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 4px;
+  --ds-input-border: #dddddd;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Droga5 ===== */
+[data-theme="droga5"] {
+  --ds-font-family: "Noto Sans JP", sans-serif;
+  --ds-text-primary: #000000;
+  --ds-text-secondary: #959595;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #ffffff;
+  --ds-primary: #0000d5;
+  --ds-primary-text: #ffffff;
+  --ds-link: #0000d5;
+  --ds-border: #cccccc;
+  --ds-nav-bg: transparent;
+  --ds-nav-text: #000000;
+  --ds-body-size: 28px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: normal;
+  --ds-heading-size: 100px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.2;
+  --ds-heading-ls: -3px;
+  --ds-btn-radius: 5px;
+  --ds-btn-size: 14px;
+  --ds-btn-weight: 400;
+  --ds-btn-padding: 8px 24px;
+  --ds-card-radius: 0px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 4px;
+  --ds-input-border: #cccccc;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== LINE ===== */
+[data-theme="line"] {
+  --ds-font-family: SFPro, Arial, "Noto Sans JP", "Noto Sans KR", sans-serif;
+  --ds-text-primary: #000000;
+  --ds-text-secondary: #666666;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f7f8f9;
+  --ds-primary: #06c755;
+  --ds-primary-text: #ffffff;
+  --ds-link: #06c755;
+  --ds-border: #e5e5e5;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #000000;
+  --ds-body-size: 20px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: normal;
+  --ds-heading-size: 60px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.334;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 8px;
+  --ds-btn-size: 16px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 12px 32px;
+  --ds-card-radius: 12px;
+  --ds-card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --ds-input-radius: 8px;
+  --ds-input-border: #e5e5e5;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Mercari ===== */
+[data-theme="mercari"] {
+  --ds-font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --ds-text-primary: #333333;
+  --ds-text-secondary: #666666;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f5f5f5;
+  --ds-primary: #ff333f;
+  --ds-primary-text: #ffffff;
+  --ds-link: #0073cc;
+  --ds-border: #dddddd;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #333333;
+  --ds-body-size: 15px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.4;
+  --ds-body-ls: normal;
+  --ds-heading-size: 20px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.4;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 14px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 8px 16px;
+  --ds-card-radius: 4px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 0px;
+  --ds-input-border: #cccccc;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== MoneyForward ===== */
+[data-theme="moneyforward"] {
+  --ds-font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, メイリオ, "MS PGothic", Osaka, sans-serif;
+  --ds-text-primary: #333333;
+  --ds-text-secondary: #666666;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f5f5f5;
+  --ds-primary: #4db848;
+  --ds-primary-text: #ffffff;
+  --ds-link: #4db848;
+  --ds-border: #dddddd;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #333333;
+  --ds-body-size: 14px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: normal;
+  --ds-heading-size: 20px;
+  --ds-heading-weight: 500;
+  --ds-heading-lh: normal;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 14px;
+  --ds-btn-weight: 500;
+  --ds-btn-padding: 8px 24px;
+  --ds-card-radius: 4px;
+  --ds-card-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --ds-input-radius: 4px;
+  --ds-input-border: #dddddd;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== MUJI ===== */
+[data-theme="muji"] {
+  --ds-font-family: "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --ds-text-primary: #3c3c43;
+  --ds-text-secondary: #6d6d72;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f4eede;
+  --ds-primary: #3c3c43;
+  --ds-primary-text: #ffffff;
+  --ds-link: #3c3c43;
+  --ds-border: #d8d8d9;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #3c3c43;
+  --ds-body-size: 16px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.6;
+  --ds-body-ls: normal;
+  --ds-heading-size: 32px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.6;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 12px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 8px 16px;
+  --ds-card-radius: 0px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 0px;
+  --ds-input-border: #d8d8d9;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Notion ===== */
+[data-theme="notion"] {
+  --ds-font-family: Inter, -apple-system, "system-ui", "Segoe UI", Helvetica, Arial, sans-serif;
+  --ds-text-primary: rgba(255,255,255,0.95);
+  --ds-text-secondary: rgba(255,255,255,0.6);
+  --ds-bg: #191918;
+  --ds-bg-secondary: #2F2F2F;
+  --ds-primary: #ffffff;
+  --ds-primary-text: #191918;
+  --ds-link: #2383E2;
+  --ds-border: rgba(255,255,255,0.13);
+  --ds-nav-bg: #191918;
+  --ds-nav-text: rgba(255,255,255,0.95);
+  --ds-body-size: 16px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: normal;
+  --ds-heading-size: 54px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.04;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 8px;
+  --ds-btn-size: 16px;
+  --ds-btn-weight: 500;
+  --ds-btn-padding: 8px 16px;
+  --ds-card-radius: 12px;
+  --ds-card-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  --ds-input-radius: 6px;
+  --ds-input-border: rgba(255,255,255,0.13);
+  --ds-backdrop-filter: none;
+  --ds-font-feature: "lnum", "locl" 0;
+}
+
+/* ===== Novasell ===== */
+[data-theme="novasell"] {
+  --ds-font-family: "Zen Kaku Gothic New", sans-serif;
+  --ds-text-primary: #000000;
+  --ds-text-secondary: #7e8085;
+  --ds-bg: #000000;
+  --ds-bg-secondary: #f1f5f9;
+  --ds-primary: #00fa27;
+  --ds-primary-text: #000000;
+  --ds-link: #00aa14;
+  --ds-border: #cdcfd4;
+  --ds-nav-bg: transparent;
+  --ds-nav-text: #000000;
+  --ds-body-size: 16px;
+  --ds-body-weight: 700;
+  --ds-body-lh: 1.75;
+  --ds-body-ls: normal;
+  --ds-heading-size: 40px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.2;
+  --ds-heading-ls: -0.24px;
+  --ds-btn-radius: 16.5px;
+  --ds-btn-size: 12px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 8px 24px;
+  --ds-card-radius: 0px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 4px;
+  --ds-input-border: #cdcfd4;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== pixiv ===== */
+[data-theme="pixiv"] {
+  --ds-font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  --ds-text-primary: #464a4d;
+  --ds-text-secondary: #8c8c8c;
+  --ds-bg: #eeeeee;
+  --ds-bg-secondary: #ffffff;
+  --ds-primary: #0096fa;
+  --ds-primary-text: #ffffff;
+  --ds-link: #0096fa;
+  --ds-border: #d6d6d6;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #464a4d;
+  --ds-body-size: 12px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: normal;
+  --ds-heading-size: 14px;
+  --ds-heading-weight: 400;
+  --ds-heading-lh: 1.57;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 14px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 8px 24px;
+  --ds-card-radius: 4px;
+  --ds-card-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  --ds-input-radius: 4px;
+  --ds-input-border: #d6d6d6;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Qiita ===== */
+[data-theme="qiita"] {
+  --ds-font-family: YakuHanJPs, -apple-system, "system-ui", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --ds-text-primary: rgba(0,0,0,0.87);
+  --ds-text-secondary: rgba(0,0,0,0.54);
+  --ds-bg: #f5f6f6;
+  --ds-bg-secondary: #ffffff;
+  --ds-primary: #55c500;
+  --ds-primary-text: #ffffff;
+  --ds-link: #55c500;
+  --ds-border: #e0e0e0;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: rgba(0,0,0,0.87);
+  --ds-body-size: 16px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.8;
+  --ds-body-ls: normal;
+  --ds-heading-size: 20px;
+  --ds-heading-weight: 600;
+  --ds-heading-lh: 1.4;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 14px;
+  --ds-btn-weight: 600;
+  --ds-btn-padding: 8px 16px;
+  --ds-card-radius: 4px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 4px;
+  --ds-input-border: #e0e0e0;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Rakuten ===== */
+[data-theme="rakuten"] {
+  --ds-font-family: Meiryo, "Hiragino Kaku Gothic ProN", "MS PGothic", sans-serif;
+  --ds-text-primary: #666666;
+  --ds-text-secondary: #999999;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f6f6f6;
+  --ds-primary: #bf0000;
+  --ds-primary-text: #ffffff;
+  --ds-link: #bf0000;
+  --ds-border: #dddddd;
+  --ds-nav-bg: #bf0000;
+  --ds-nav-text: #ffffff;
+  --ds-body-size: 12px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.1;
+  --ds-body-ls: normal;
+  --ds-heading-size: 20px;
+  --ds-heading-weight: 600;
+  --ds-heading-lh: 1.4;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 14px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 8px 16px;
+  --ds-card-radius: 0px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 4px;
+  --ds-input-border: #cccccc;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Sansan ===== */
+[data-theme="sansan"] {
+  --ds-font-family: helvetica, arial, YuGothic, "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+  --ds-text-primary: #1a1a1a;
+  --ds-text-secondary: #666666;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f5f5f5;
+  --ds-primary: #2566d4;
+  --ds-primary-text: #ffffff;
+  --ds-link: #2566d4;
+  --ds-border: #dddddd;
+  --ds-nav-bg: #042a6d;
+  --ds-nav-text: #ffffff;
+  --ds-body-size: 14px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: normal;
+  --ds-heading-size: 54.8px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.4;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 16px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 12px 32px;
+  --ds-card-radius: 8px;
+  --ds-card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --ds-input-radius: 4px;
+  --ds-input-border: #dddddd;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Studio ===== */
+[data-theme="studio"] {
+  --ds-font-family: Inter, "Noto Sans JP", sans-serif;
+  --ds-text-primary: #222222;
+  --ds-text-secondary: #707070;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f7f7f7;
+  --ds-primary: #222222;
+  --ds-primary-text: #f7f7f7;
+  --ds-link: #0275fd;
+  --ds-border: #dddddd;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #222222;
+  --ds-body-size: 15px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.7;
+  --ds-body-ls: normal;
+  --ds-heading-size: 36px;
+  --ds-heading-weight: 600;
+  --ds-heading-lh: 1.25;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 500px;
+  --ds-btn-size: 13px;
+  --ds-btn-weight: 500;
+  --ds-btn-padding: 10px 24px;
+  --ds-card-radius: 12px;
+  --ds-card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --ds-input-radius: 4px;
+  --ds-input-border: #dddddd;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Tabelog ===== */
+[data-theme="tabelog"] {
+  --ds-font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+  --ds-text-primary: #595960;
+  --ds-text-secondary: #999999;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f5f5f5;
+  --ds-primary: #f09000;
+  --ds-primary-text: #ffffff;
+  --ds-link: #f09000;
+  --ds-border: #dddddd;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #333333;
+  --ds-body-size: 12px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.4;
+  --ds-body-ls: normal;
+  --ds-heading-size: 22.5px;
+  --ds-heading-weight: 600;
+  --ds-heading-lh: 1.0;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 3px;
+  --ds-btn-size: 12px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 8px 16px;
+  --ds-card-radius: 0px;
+  --ds-card-shadow: none;
+  --ds-input-radius: 3px;
+  --ds-input-border: #cccccc;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Toyota ===== */
+[data-theme="toyota"] {
+  --ds-font-family: "SF Pro", -apple-system, "system-ui", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --ds-text-primary: #222222;
+  --ds-text-secondary: #666666;
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f5f5f5;
+  --ds-primary: #eb0a1e;
+  --ds-primary-text: #ffffff;
+  --ds-link: #222222;
+  --ds-border: #dddddd;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: #222222;
+  --ds-body-size: 16px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.5;
+  --ds-body-ls: 0.04em;
+  --ds-heading-size: 40px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.5;
+  --ds-heading-ls: 0.04em;
+  --ds-btn-radius: 4px;
+  --ds-btn-size: 16px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 12px 32px;
+  --ds-card-radius: 8px;
+  --ds-card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --ds-input-radius: 4px;
+  --ds-input-border: #dddddd;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Zenn ===== */
+[data-theme="zenn"] {
+  --ds-font-family: -apple-system, "system-ui", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --ds-text-primary: rgba(0,0,0,0.82);
+  --ds-text-secondary: rgba(0,0,0,0.55);
+  --ds-bg: #ffffff;
+  --ds-bg-secondary: #f1f5f9;
+  --ds-primary: #3ea8ff;
+  --ds-primary-text: #ffffff;
+  --ds-link: #3ea8ff;
+  --ds-border: #d6e3ed;
+  --ds-nav-bg: #ffffff;
+  --ds-nav-text: rgba(0,0,0,0.82);
+  --ds-body-size: 16px;
+  --ds-body-weight: 400;
+  --ds-body-lh: 1.8;
+  --ds-body-ls: normal;
+  --ds-heading-size: 38.4px;
+  --ds-heading-weight: 700;
+  --ds-heading-lh: 1.5;
+  --ds-heading-ls: normal;
+  --ds-btn-radius: 8px;
+  --ds-btn-size: 16px;
+  --ds-btn-weight: 700;
+  --ds-btn-padding: 8px 24px;
+  --ds-card-radius: 12px;
+  --ds-card-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  --ds-input-radius: 8px;
+  --ds-input-border: #d6e3ed;
+  --ds-backdrop-filter: none;
+  --ds-font-feature: normal;
+}
+
+/* ===== Demo area styled by design system ===== */
+.demo-area {
+  font-family: var(--ds-font-family);
+  color: var(--ds-text-primary);
+  font-size: var(--ds-body-size);
+  font-weight: var(--ds-body-weight);
+  line-height: var(--ds-body-lh);
+  letter-spacing: var(--ds-body-ls);
+  font-feature-settings: var(--ds-font-feature);
+}
+
+.demo-area h1,
+.demo-area h2,
+.demo-area h3 {
+  font-size: var(--ds-heading-size);
+  font-weight: var(--ds-heading-weight);
+  line-height: var(--ds-heading-lh);
+  letter-spacing: var(--ds-heading-ls);
+  color: var(--ds-text-primary);
+}
+
+.demo-area h2 {
+  font-size: calc(var(--ds-heading-size) * 0.7);
+}
+
+.demo-area h3 {
+  font-size: calc(var(--ds-heading-size) * 0.55);
+}
+
+.demo-area .ds-nav {
+  background: var(--ds-nav-bg);
+  color: var(--ds-nav-text);
+  backdrop-filter: var(--ds-backdrop-filter);
+  -webkit-backdrop-filter: var(--ds-backdrop-filter);
+}
+
+.demo-area .ds-btn-primary {
+  background: var(--ds-primary);
+  color: var(--ds-primary-text);
+  border-radius: var(--ds-btn-radius);
+  font-size: var(--ds-btn-size);
+  font-weight: var(--ds-btn-weight);
+  padding: var(--ds-btn-padding);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-family: var(--ds-font-family);
+}
+
+.demo-area .ds-btn-primary:hover {
+  opacity: 0.85;
+}
+
+.demo-area .ds-btn-outline {
+  background: transparent;
+  color: var(--ds-primary);
+  border: 1px solid var(--ds-primary);
+  border-radius: var(--ds-btn-radius);
+  font-size: var(--ds-btn-size);
+  font-weight: var(--ds-btn-weight);
+  padding: var(--ds-btn-padding);
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-family: var(--ds-font-family);
+}
+
+.demo-area .ds-card {
+  background: var(--ds-bg);
+  border-radius: var(--ds-card-radius);
+  box-shadow: var(--ds-card-shadow);
+  border: 1px solid var(--ds-border);
+  overflow: hidden;
+}
+
+.demo-area .ds-input {
+  background: var(--ds-bg);
+  border: 1px solid var(--ds-input-border);
+  border-radius: var(--ds-input-radius);
+  font-size: var(--ds-body-size);
+  font-family: var(--ds-font-family);
+  color: var(--ds-text-primary);
+  padding: 8px 12px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.demo-area .ds-input:focus {
+  border-color: var(--ds-primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ds-primary) 20%, transparent);
+}
+
+.demo-area .ds-textarea {
+  background: var(--ds-bg);
+  border: 1px solid var(--ds-input-border);
+  border-radius: var(--ds-input-radius);
+  font-size: var(--ds-body-size);
+  font-family: var(--ds-font-family);
+  color: var(--ds-text-primary);
+  padding: 8px 12px;
+  width: 100%;
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.2s;
+}
+
+.demo-area .ds-textarea:focus {
+  border-color: var(--ds-primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ds-primary) 20%, transparent);
+}
+
+.demo-area .ds-link {
+  color: var(--ds-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.demo-area .ds-secondary-text {
+  color: var(--ds-text-secondary);
+}
+
+.demo-area .ds-section-bg {
+  background: var(--ds-bg-secondary);
+}
+
+body {
+  background: #f9fafb;
+  color: #333;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Transition for demo area */
+.demo-transition-enter {
+  animation: fadeSlideIn 0.35s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Code block styling */
+.code-block {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.code-block .comment { color: #6a9955; }
+.code-block .property { color: #9cdcfe; }
+.code-block .value { color: #ce9178; }
+.code-block .keyword { color: #569cd6; }
+.code-block .string { color: #ce9178; }
