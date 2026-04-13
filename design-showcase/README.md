@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DESIGN.md Showcase
+
+DESIGN.md ファイルから抽出したデザイントークンを、同一のデモコンテンツに適用して各社のデザインシステムを比較する Web アプリです。
+
+- **JP Edition** — 日本企業 24 社のデザインシステム比較（[awesome-design-md-jp](https://github.com/kzhrknt/awesome-design-md-jp) ベース）
+- **Global Edition** — グローバル企業 59 社のデザインシステム比較（[awesome-design-md](https://github.com/VoltAgent/awesome-design-md) ベース）
+
+## Tech Stack
+
+- Next.js 16 / React 19 / TypeScript
+- Tailwind CSS 4
+- CSS Custom Properties によるテーマ切替
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+cd design-showcase
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000 で開きます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+design-showcase/
+├── src/app/
+│   ├── page.tsx              # JP Edition
+│   ├── global/page.tsx       # Global Edition
+│   ├── components/           # 共通コンポーネント
+│   ├── data/                 # デザイントークンデータ
+│   ├── globals.css           # JP テーマ CSS 変数
+│   └── global-themes.css     # Global テーマ CSS 変数
+├── awesome-design-md/        # Global DESIGN.md ソース
+├── awesome-design-md-jp/     # JP DESIGN.md ソース
+└── designTokens.ts           # 全トークン統合データ
+```

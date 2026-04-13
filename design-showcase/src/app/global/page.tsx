@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { designTokens } from "../data/globalDesignTokens";
-import { GlobalDemoContent } from "../components/GlobalDemoContent";
+import { DemoContent } from "../components/DemoContent";
 import { GlobalTokenTable } from "../components/GlobalTokenTable";
 import { UsageGuide } from "../components/UsageGuide";
 import Link from "next/link";
@@ -115,7 +115,7 @@ export default function GlobalPage() {
           key={transitionKey}
           className="demo-area demo-transition-enter rounded-xl border border-gray-200 shadow-sm overflow-hidden"
         >
-          <GlobalDemoContent ds={activeDS} />
+          <DemoContent locale="en" />
         </div>
       </section>
 

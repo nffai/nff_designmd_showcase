@@ -2,7 +2,6 @@
 
 import { useState, useCallback } from "react";
 import { designSystems } from "./data/designTokens";
-import type { DesignSystem } from "./data/designTokens";
 import { DemoContent } from "./components/DemoContent";
 import { TokenTable } from "./components/TokenTable";
 import { UsageGuide } from "./components/UsageGuide";
@@ -102,7 +101,7 @@ export default function Home() {
           key={transitionKey}
           className="demo-area demo-transition-enter rounded-xl border border-gray-200 shadow-sm overflow-hidden"
         >
-          <DemoContent ds={activeDS} />
+          <DemoContent locale="ja" />
         </div>
       </section>
 
